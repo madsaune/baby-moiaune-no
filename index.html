@@ -11,7 +11,8 @@
 
 	<div class="center">
 		<span><img src="heart.png"></span>
-		<p id="countdown"></p>
+		<p id="countdown-sondre"></p>
+		<p id="countdown-alvilde"></p>
 
 	</div>
 	
@@ -38,7 +39,8 @@
 	<script src="countdown.min.js"></script>
 	<script>
 		function update() {
-			document.getElementById("countdown").innerHTML = countdown(new Date(), new Date(2015, 11, 8), countdown.MONTHS|countdown.WEEKS|countdown.DAYS|countdown.HOURS).toHTML();
+			document.getElementById("countdown-sondre").innerHTML = countdown(new Date(), new Date(2015, 11, 8), countdown.MONTHS|countdown.WEEKS|countdown.DAYS|countdown.HOURS).toHTML();
+			document.getElementById("countdown-alvilde").innerHTML = countdown(new Date(), new Date(2019, 5, 11), countdown.MONTHS|countdown.WEEKS|countdown.DAYS|countdown.HOURS).toHTML();
 		}
 
 		update();
