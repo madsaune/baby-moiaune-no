@@ -1,21 +1,84 @@
-* { box-sizing:border-box; }
-html { font-family: "Calibri", arial; background:skyblue; color:white; }
-body { margin:20px; }
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
 
-.center {
-	margin-top:60px;
-	text-align:center;
-	-webkit-transform-style:preserve-3d;
-}
-#countdown {
-	font-size:3em;
-	font-weight:bold;
-	text-shadow:1px 1px #669BB0;
+* { box-sizing: border-box; }
+
+body { 
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  background-color: CornflowerBlue;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.timeline { width:400px; padding:0; margin:0 auto; }
+h1 {
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgb(0 0 0 / 20%);
+}
+
+.page-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.children {
+  overflow: hidden;
+  clear: both;
+}
+
+.heart {
+  float: left;
+  width: 20%;
+}
+
+.heart img {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.boy, .girl {
+  width: 40%;
+  padding: 10px;
+}
+
+.boy img, .girl img {
+  display: block;
+  background: #fff;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  border-radius: 8px;
+  border: 20px solid #fff;
+}
+
+.boy {
+  float: left;
+}
+
+.girl {
+  float: right;
+}
+
+[id^="countdown-"] {
+  font-size: 1.5rem;
+}
+
+.timeline {
+  width:400px;
+  padding:0;
+  margin:0 auto;
+  list-style: none;
+}
+
+.timeline-year {
+  margin-bottom: 25px;
+  color: #fff;
+}
+
 .timeline-entry {
-	margin-bottom:25px;
+	position: relative;
+
+  margin-bottom:25px;
 	padding:20px;
 
 	background:white;
@@ -28,6 +91,29 @@ body { margin:20px; }
 
 	list-style:none;
 }
+
+.timeline-boy:before,
+.timeline-girl:after {
+  content: '';
+  position: absolute;
+  top: 19px;
+  width: 60px;
+  height: 60px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 60px 60px;
+}
+
+.timeline-boy:before {
+  left: 17px;
+  background-image: url('facebook-boy-emoji.png');
+}
+
+.timeline-girl:after {
+  right: 20px;
+  background-image: url('facebook-girl-emoji.png');
+}
+
 .timeline-entry:last-child { margin-bottom:0; }
 .timeline-date { display:block; text-align:center; }
 .timeline-title { margin:5px 0; }
@@ -37,6 +123,7 @@ and (min-device-width : 320px)
 and (max-device-width : 568px) 
 and (orientation : portrait) {
 
-	.timeline { width:100%; }
+	.timeline { width: 100%; }
+  .page-wrapper { width: 100%; }
 
 }

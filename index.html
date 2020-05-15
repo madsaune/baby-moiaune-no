@@ -9,38 +9,95 @@
 </head>
 <body>
 
-	<div class="center">
-		<span><img src="heart.png"></span>
-		<p id="countdown-sondre"></p>
-		<p id="countdown-alvilde"></p>
+  <div class="page-wrapper">
 
-	</div>
-	
+    <h1>Velkommen til familien Moi-Aune!</h1>
+
+    <div class="children">
+
+      <div class="boy">
+
+        <img src="facebook-boy-emoji.png" />
+        <p id="countdown-boy"></p>
+
+      </div>
+
+
+      <div class="heart">
+        <img src="heart.png" />
+      </div>
+
+      <div class="girl">
+        
+        <img src="facebook-girl-emoji.png" />
+        <p id="countdown-girl"></p>
+
+      </div>
+
+    </div>
+
+  </div>
 
 	<ul class="timeline">
-		<li class="timeline-entry">
+
+    <li class="timeline-year">2014</li>
+
+		<li class="timeline-entry timeline-boy">
 			<span class="timeline-date">24. Mars</span>
 			<h2 class="timeline-title">Første ultralyd</h2>
 		</li>
 
-		<li class="timeline-entry">
+		<li class="timeline-entry timeline-boy">
 			<span class="timeline-date">07. April</span>
 			<h2 class="timeline-title">Andre ultralyd</h2>
 		</li>
 
-		<!--<li class="timeline-entry">
-			<span class="timeline-date">24. Mars</span>
-			<h2 class="timeline-title">Lorem ipsum</h2>
-			<p class="timeline-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitatio ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-		</li> -->
+    <li class="timeline-year">2015</li>
+
+    <li class="timeline-entry timeline-boy">
+      <span class="timeline-date">08. November</span>
+      <h2 class="timeline-title">Født</h2>
+    </li>
+
+    <li class="timeline-year">2019</li>
+
+    <li class="timeline-entry timeline-girl">
+      <span class="timeline-date">11. Mai</span>
+      <h2 class="timeline-title">Født</h2>
+    </li>
+
 	</ul>
 
 
 	<script src="countdown.min.js"></script>
 	<script>
+    countdown.setLabels(
+      ' millisekund| sekund| minutt| time| dag| uke| måned| år| tiår| århundre| årtusen',
+      ' millisekunder| sekunder| minutter| timer| dager| uker| måneder| år| tiår| århundre| årtusener',
+      ' og ',
+      ', ',
+      '',
+      function(n) { return n.toString(); }
+    );
+
 		function update() {
-			document.getElementById("countdown-sondre").innerHTML = countdown(new Date(), new Date(2015, 11, 8), countdown.MONTHS|countdown.WEEKS|countdown.DAYS|countdown.HOURS).toHTML();
-			document.getElementById("countdown-alvilde").innerHTML = countdown(new Date(), new Date(2019, 5, 11), countdown.MONTHS|countdown.WEEKS|countdown.DAYS|countdown.HOURS).toHTML();
+			document
+        .getElementById("countdown-boy")
+        .innerHTML = countdown(
+          new Date(),
+          new Date('2015-11-08T09:55:00'),
+          countdown.YEARS|countdown.MONTHS|countdown.WEEKS|countdown.DAYS|countdown.HOURS,
+          3
+        ).toHTML();
+
+			document
+        .getElementById("countdown-girl")
+        .innerHTML = countdown(
+          new Date(),
+          new Date('2019-05-11T02:40:00'),
+          countdown.YEARS|countdown.MONTHS|countdown.WEEKS|countdown.DAYS|countdown.HOURS,
+          3
+        ).toHTML();
 		}
 
 		update();
